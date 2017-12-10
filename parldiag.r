@@ -39,7 +39,7 @@ parlDiag <- function(Parties, shares, cols = NULL, repr=c("absolute", "proportio
     geom_label(aes(x = 1.15 * labelX, y = 1.15 * labelY, 
                    label = switch(repr,
                                   "absolute" = sprintf("%s\n%i", Parties, shares),
-                                  "proportion" = sprintf("%s\n%i%%", Parties, shares*100))), fontface = "bold", 
+                                  "proportion" = sprintf("%s\n%i%%", Parties, round(shares*100)))), fontface = "bold", 
                label.padding = unit(1, "points")) +
 
     geom_path(aes(x = c(0.9 * labelX, 1.05 * labelX), y = c(0.9 * labelY, 1.05 * labelY),
