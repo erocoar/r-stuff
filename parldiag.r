@@ -13,9 +13,7 @@ parlDiag <- function(Parties, shares, cols = NULL, repr=c("absolute", "proportio
   # arc start/end in rads, last one reset bc rounding errors
   cc <- cumsum(c(-pi/2, switch(repr, "absolute" = (shares / sum(shares)) * pi, "proportion" = shares * pi)))
   cc[length(cc)] <- pi/2
-  
-  l <- length(shares) - 1
-  
+    
   # get angle of arc midpoints
   meanAngles <- colMeans(rbind(cc[2:length(cc)], cc[1:length(cc)-1]))
 
